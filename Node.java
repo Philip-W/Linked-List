@@ -16,8 +16,6 @@ private class Node {
   }
   
   public Object getData() { return data; }
-    
   
-  
-  
-  }
+
+}
