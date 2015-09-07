@@ -14,3 +14,16 @@ public class linkList{
   public addNode(Object o, int index){}
   
   public removeNode(int index){}
+  
+  public String toString(){
+      Node n = head;
+      String s = "" + n.toString();
+      while (n.Next() != null){
+          s = s + ", " + n.Next().toString();
+          n = n.Next();
+      }
+      return s;
+  }
+ 
+  
+}
