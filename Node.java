@@ -17,5 +17,9 @@ private class Node {
   
   public Object getData() { return data; }
   
+  public Node Next(){ return next; }
+
+  public void setNext(Node k) { next = k; }
+  
 
 }
