@@ -9,21 +9,42 @@ public class linkList{
     size = 0;
   }
 
-  public addNode(Object o){}
+  public void  addToTail(Object o){
+    Node end = head;
+    Node n = new Node(o);
+    while (end.Next() != null){end = end.Next();}
+    end.setNext(n);
+    n.setNext(null);
+    size += 1;
 
-  public addNode(Object o, int index){}
-  
-  public removeNode(int index){}
-  
+  }
+
+  public void addNode(Object o, int index){}
+
+  public void removeNode(int index){
+    //where head index = 1;
+
+    if (index < 1 || index > size - 1){ return; }
+
+    Node current = head;
+    int count = 0;
+    while (count != index - 1 ){ current = current.Next(); count += 1;}
+
+
+    current.setNext(current.Next().Next());
+    size--;
+
+    }
+
   public String toString(){
       Node n = head;
-      String s = "" + n.toString();
+      StringBuffer l = new StringBuffer();
+      String s = "";
       while (n.Next() != null){
-          s = s + ", " + n.Next().toString();
+          s = "" + n.Next().getData().toString() + " ";
+          l.append(s);
           n = n.Next();
       }
-      return s;
+      return  l.toString();
   }
- 
-  
 }
