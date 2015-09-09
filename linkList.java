@@ -1,11 +1,14 @@
 
+//Singly Linked List which MUST be initialised with an object
+//for the head to be created properly.
+
 public class linkList{
 
   private Node head;
   private int size;
 
-  public linkList(){
-    head = new Node(null);
+  public linkList(Object o){
+    head = new Node(o);
     size = 0;
   }
 
@@ -19,12 +22,25 @@ public class linkList{
 
   }
 
-  public void addNode(Object o, int index){}
+  public void addNode(Object o, int index){
+    //adds a Node after the given index, where 0 is the first.
+    Node add = new Node(o);
+    if (index < 0 || index > size) { return; }
+    Node current = head;
+    int i = 0;
+    while (i != index){
+      current = current.Next();
+      i++;
+    }
+    add.setNext(current.Next());
+    current.setNext(add);
+    size--;
+  }
 
   public void removeNode(int index){
-    //where head index = 1;
+    //where head index = 0;
 
-    if (index < 1 || index > size - 1){ return; }
+    if (index < 1 || index > size){ return; }
 
     Node current = head;
     int count = 0;
@@ -36,15 +52,17 @@ public class linkList{
 
     }
 
+  public Node getHead(){ return head; }
+
   public String toString(){
       Node n = head;
       StringBuffer l = new StringBuffer();
       String s = "";
-      while (n.Next() != null){
-          s = "" + n.Next().getData().toString() + " ";
+      do {
+          s = "" + n.getData().toString() + " ";
           l.append(s);
           n = n.Next();
-      }
+      } while( n != null);
       return  l.toString();
   }
 }
