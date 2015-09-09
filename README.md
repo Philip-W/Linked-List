@@ -1,5 +1,6 @@
 # Linked-List
-Testing implementing a linked list in java. Done with a node class and a Linked list class.
+Testing implementing a singly linked list in java. Basic methods should all be implemented now.
 
-Update with the various methods of classes.
+# Initializing 
+The list currently is initialized by providing the constructor with some object, it might be better to change this to accepting a Node.
 
