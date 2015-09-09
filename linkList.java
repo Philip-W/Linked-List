@@ -9,7 +9,7 @@ public class linkList{
 
   public linkList(Object o){
     head = new Node(o);
-    size = 0;
+    size = 1;
   }
 
   public void  addToTail(Object o){
