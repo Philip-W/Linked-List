@@ -1,4 +1,4 @@
-  
+  //Modiify so that it can be used for a double linked list (add preve())
   
 private class Node {
   
